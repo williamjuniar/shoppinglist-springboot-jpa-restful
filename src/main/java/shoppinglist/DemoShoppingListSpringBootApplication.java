@@ -8,6 +8,7 @@ import shoppinglist.entity.DaftarBelanja;
 import shoppinglist.entity.DaftarBelanjaDetil;
 import shoppinglist.repository.DaftarBelanjaRepo;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -74,10 +75,8 @@ public class DemoShoppingListSpringBootApplication implements CommandLineRunner
                 System.out.println("\t Nama Barang : " + dbd.getNamaBarang() + "\n\t Jumlah : " +
                         dbd.getByk() + "\n\t Satuan : " + dbd.getSatuan());
             }
-            gambarGaris();
         }else{
             System.out.println("Data tidak ditemukan!");
-            gambarGaris();
         }
     }
 
@@ -93,7 +92,7 @@ public class DemoShoppingListSpringBootApplication implements CommandLineRunner
         db.setTanggal(tglBuat);
         repo.save(db);
         System.out.println("Judul Berhasil Ditambahkan!");
-        gambarGaris();
+
     }
 
     public void PerbaruiDaftarBelanja(){
@@ -122,11 +121,9 @@ public class DemoShoppingListSpringBootApplication implements CommandLineRunner
             db.setTanggal(tglBuat);
             repo.save(db);
             System.out.println("Berhasil Diupdate");
-            gambarGaris();
         }
         else {
             System.out.println("\tData tidak ditemukan.");
-            gambarGaris();
         }
     }
 
@@ -154,11 +151,9 @@ public class DemoShoppingListSpringBootApplication implements CommandLineRunner
                 repo.deleteById(id);
                 System.out.println("Penghapusan Berhasil");
             }
-            gambarGaris();
         }
         else {
             System.out.println("\tData tidak ditemukan.");
-            gambarGaris();
         }
 
     }
